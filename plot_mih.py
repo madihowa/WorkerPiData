@@ -17,6 +17,7 @@ import matplotlib
 import matplotlib.dates as md
 import dateutil
 import glob
+import seaborn as sns
 
 #object to store time,temp,pressure,humidity information
 class ThermoData:
@@ -46,6 +47,7 @@ class ThermoData:
 
 #function to create the needed plots
 def plotSingleGraph(pis, therm_var):
+    sns.set_palette(sns.color_palette("hls", 20))
     fig, ax = plt.subplots()
     for pi in pis:
         if therm_var == "temperature":
@@ -99,8 +101,8 @@ if __name__ == "__main__":
     pi_B = ThermoData("DataLog(B).txt")
     pi_C = ThermoData("DataLog(C).txt")
     all_pi = [pi_A,pi_B,pi_C]
-    printRunTimes(all_pi)
-    plotSingleGraph(all_pi, "temperature")
-    plotSingleGraph(all_pi, "pressure")
-    plotSingleGraph(all_pi, "humidity")
-  #  plotDataFromAllPi()
+  #  printRunTimes(all_pi)
+  #  plotSingleGraph(all_pi, "temperature")
+  #  plotSingleGraph(all_pi, "pressure")
+  #  plotSingleGraph(all_pi, "humidity")
+    plotDataFromAllPi()
