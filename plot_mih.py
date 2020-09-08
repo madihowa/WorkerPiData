@@ -2,7 +2,6 @@
 @author: Madison Howard
 @date: 2020-08-13
 @purpose: create 3 seperate plots (T,P,H) of all data vs time
-to-do:
 """
 
 import matplotlib.pyplot as plt
