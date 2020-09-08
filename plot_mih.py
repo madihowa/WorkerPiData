@@ -3,10 +3,6 @@
 @date: 2020-08-13
 @purpose: create 3 seperate plots (T,P,H) of all data vs time
 to-do:
-    1) explain to MIH
-    2) let MIH explain back
-    3) create code docs
-    4) create code usage example
 """
 
 import matplotlib.pyplot as plt
