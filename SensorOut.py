@@ -6,12 +6,23 @@ sensor = BME280(t_mode=BME280_OSAMPLE_8, p_mode=BME280_OSAMPLE_8, h_mode=BME280_
 MQTT_SERVER = "10.191.12.7"
 MQTT_PATH = "test_channel"
 
+
+
+
 while True:
     
     file1=open("weatherlog.txt","a")
     degrees = sensor.read_temperature()
     humidity = sensor.read_humidity()
     pascals = sensor.read_pressure()
+    
+    """
+    #MIH 9/26/20
+    therm_var = degrees, humidity, pascals
+    #make sure that the methods (checkData and email) in simAPDL.py is in this file
+    #have the alarm_system.py in the same directory as this file
+    """
+    
     KPA = (pascals) / 1000
     Faren = (degrees*9/5)+32
     now = datetime.now()
